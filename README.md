@@ -367,7 +367,7 @@ The VLM development score increases monotonically across all four clusters, mirr
 
 The correlation results in this study are exceptional. Pearson r values of 0.942, -0.957, and 0.963 between VLM visual scores and NFHS-5 indicators confirm that **satellite visual features, as interpreted by Claude Vision, carry strong demographic signal at the geodemographic cluster level**.
 
-This is not a guaranteed outcome. The VLM could have produced noisy, uncorrelated scores that reflected irrelevant visual attributes — cloud patterns, seasonal variation, image artefacts. Instead, it produced scores that align with what trained survey teams measured through years of household interviews. This is a meaningful validation of the core hypothesis.
+This is not a guaranteed outcome. The VLM could have produced noisy, uncorrelated scores that reflected irrelevant visual attributes, i.e., cloud patterns, seasonal variation, image artefacts. Instead, it produced scores that align with what trained survey teams measured through years of household interviews. This is a meaningful validation of the core hypothesis.
 
 ### Implications for Policy and Planning
 
