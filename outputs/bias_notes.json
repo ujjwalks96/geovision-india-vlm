@@ -1,0 +1,9 @@
+{
+  "Label Leakage": "District names provided in prompt. Claude may activate prior knowledge of the area rather than deriving all scores purely from image pixels. A blind-prompt comparison is recommended.",
+  "Spatial Scale Mismatch": "10km buffer around HQ may not represent full district. HQ areas systematically over-represent urban cores, biasing urban_density and road_network_density scores upward.",
+  "Seasonal Bias": "2023 annual composite blends all seasons. Monsoon-driven agricultural patterns (peak June-September) are diluted by dry-season imagery, potentially underestimating agricultural_activity.",
+  "VLM Training Bias": "Claude Vision trained predominantly on Western and Global North imagery. Urban density thresholds calibrated to US/European contexts may not transfer accurately to Indian built environments.",
+  "Resolution Limits": "Sentinel-2 10m resolution cannot resolve individual buildings or narrow lanes. Informal settlement detection at this scale relies on texture patterns, which are unreliable in dense urban areas.",
+  "Small n Alignment": "Correlation analysis conducted on n=4 cluster aggregates. With only 4 data points, r values can be driven by single outliers. Results should be treated as directional, not definitive.",
+  "Cloud Contamination": "Residual cloud pixels in composites \u2014 especially in northeastern India \u2014 may skew vegetation and brightness scores even after cloud masking."
+}

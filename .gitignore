@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# API Keys — NEVER commit
+secrets.json
+.env
+*_key.txt
+*_secret.txt
+
+# Satellite images (large, auto-generated via GEE)
+images/*.png
+images/*.tif
+images/*.tiff
+images/*.jpg
+
+# Generated outputs (comment out if you want to commit outputs)
+# outputs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Colab checkpoints
+drive/

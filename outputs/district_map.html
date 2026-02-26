@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ed78239ca16ea89a602dc88b9777ce7e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed;bottom:30px;left:30px;z-index:1000;
+     background:white;padding:14px 18px;border-radius:8px;
+     border:1px solid #cccccc;box-shadow:0 2px 10px rgba(0,0,0,0.15);
+     font-family:Arial,sans-serif;font-size:12px;color:#1a1a1a">
+  <b style='color:#26A69A;font-size:13px'>GeoVision India</b><br><br>
+  <span style='color:#1A237E'>● C0: High Deprivation</span><br>
+  <span style='color:#1976D2'>● C1: Moderate Deprivation</span><br>
+  <span style='color:#26A69A'>● C2: Transitioning</span><br>
+  <span style='color:#66BB6A'>● C3: Better Developed</span>
+</div>
+    
+            <div class="folium-map" id="map_ed78239ca16ea89a602dc88b9777ce7e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ed78239ca16ea89a602dc88b9777ce7e = L.map(
+                "map_ed78239ca16ea89a602dc88b9777ce7e",
+                {
+                    center: [22.5, 80.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9f90eb0ef888ef5e21cd25e061aab78c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9f90eb0ef888ef5e21cd25e061aab78c.addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+            var tile_layer_f7ee13bee9949173da4288189d6b5521 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=m\u0026x={x}\u0026y={y}\u0026z={z}",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "Google Maps",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f7ee13bee9949173da4288189d6b5521.addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+            var circle_marker_9d316a754e03c482d29f1b9f3235846b = L.circleMarker(
+                [24.64, 87.84],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1A237E", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_f7b4a89dd76af1a86712fd8940801a2d = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_010dd39321acdbc3fb8f459633c56f67 = $(`<div id="html_010dd39321acdbc3fb8f459633c56f67" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #1A237E;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Pakur, Jharkhand</b><br>       <span style='color:#1A237E;font-weight:700;font-size:11px'>         Cluster 0: High Deprivation</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>2/10</b><br>           Vegetation: <b>4/10</b><br>           Roads: <b>3/10</b><br>           Development: <b>2/10</b><br>           Land Use: <b>mixed</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The landscape is predominantly semi-arid with exposed rocky/laterite terrain and scattered patches of green vegetation, suggesting a dry season or sparse woodland. A prominent river or seasonal watercourse meanders through the central-southern portion of the image. A major road or railway corridor is visible along the eastern edge, with a greener floodplain suggesting proximity to a river system, likely the Bansloi or a tributary. Settlement clusters are small and dispersed across the terrain.</i>     </div></div>`)[0];
+                popup_f7b4a89dd76af1a86712fd8940801a2d.setContent(html_010dd39321acdbc3fb8f459633c56f67);
+            
+        
+
+        circle_marker_9d316a754e03c482d29f1b9f3235846b.bindPopup(popup_f7b4a89dd76af1a86712fd8940801a2d)
+        ;
+
+        
+    
+    
+            circle_marker_9d316a754e03c482d29f1b9f3235846b.bindTooltip(
+                `<div>
+                     Pakur · C0 · Dev 2/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a548da1affdb2f870a0358e90507fa4b = L.circleMarker(
+                [25.78, 87.47],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1A237E", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_6a650e5e3db17f221e426a1ea0d1d00f = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_f564f84713f0e51c3ff2b10f81ba05e5 = $(`<div id="html_f564f84713f0e51c3ff2b10f81ba05e5" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #1A237E;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Purnea, Bihar</b><br>       <span style='color:#1A237E;font-weight:700;font-size:11px'>         Cluster 0: High Deprivation</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>5/10</b><br>           Vegetation: <b>6/10</b><br>           Roads: <b>5/10</b><br>           Development: <b>4/10</b><br>           Land Use: <b>mixed</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>A moderately dense urban core is visible in the center-right portion of the image, with a sprawling peri-urban transition into agricultural land. A prominent airport or airstrip is clearly visible on the left side of the image. The surrounding landscape shows a mix of green vegetation and fragmented agricultural plots with scattered rural settlements radiating outward from the town center.</i>     </div></div>`)[0];
+                popup_6a650e5e3db17f221e426a1ea0d1d00f.setContent(html_f564f84713f0e51c3ff2b10f81ba05e5);
+            
+        
+
+        circle_marker_a548da1affdb2f870a0358e90507fa4b.bindPopup(popup_6a650e5e3db17f221e426a1ea0d1d00f)
+        ;
+
+        
+    
+    
+            circle_marker_a548da1affdb2f870a0358e90507fa4b.bindTooltip(
+                `<div>
+                     Purnea · C0 · Dev 4/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e7bed27f0f8dd165b503211bc277cbf7 = L.circleMarker(
+                [20.77, 82.53],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1A237E", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_1f0ed008837370a05a069f25824289d6 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_2380c170cf787cd4f9bfe63c69e0a09b = $(`<div id="html_2380c170cf787cd4f9bfe63c69e0a09b" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #1A237E;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Nuapada, Odisha</b><br>       <span style='color:#1A237E;font-weight:700;font-size:11px'>         Cluster 0: High Deprivation</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>1/10</b><br>           Vegetation: <b>4/10</b><br>           Roads: <b>2/10</b><br>           Development: <b>2/10</b><br>           Land Use: <b>mixed</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The image is dominated by a rugged, hilly terrain with scattered forested ridges (dark green) interspersed with extensive brown, dry agricultural or fallow land. A large water body (likely a reservoir) is prominently visible in the lower-left corner, suggesting irrigation infrastructure. The landscape shows very minimal urban development, consistent with a rural, underdeveloped tribal district with seasonal agriculture dependent on monsoon rains.</i>     </div></div>`)[0];
+                popup_1f0ed008837370a05a069f25824289d6.setContent(html_2380c170cf787cd4f9bfe63c69e0a09b);
+            
+        
+
+        circle_marker_e7bed27f0f8dd165b503211bc277cbf7.bindPopup(popup_1f0ed008837370a05a069f25824289d6)
+        ;
+
+        
+    
+    
+            circle_marker_e7bed27f0f8dd165b503211bc277cbf7.bindTooltip(
+                `<div>
+                     Nuapada · C0 · Dev 2/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e41ff6714b7c80bf98d55a095e65108b = L.circleMarker(
+                [26.52, 85.3],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1976D2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_f4a184fed3e4b76cf09b3704c660293b = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_e252bf27d64370c1768e2a96e7a903f0 = $(`<div id="html_e252bf27d64370c1768e2a96e7a903f0" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #1976D2;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Sheohar, Bihar</b><br>       <span style='color:#1976D2;font-weight:700;font-size:11px'>         Cluster 1: Moderate Deprivation</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>3/10</b><br>           Vegetation: <b>5/10</b><br>           Roads: <b>4/10</b><br>           Development: <b>3/10</b><br>           Land Use: <b>agricultural</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The landscape is dominated by extensive agricultural patchwork fields in varying stages of cultivation, with brownish-red tones suggesting post-harvest or fallow land interspersed with green vegetation. A river or stream channel runs roughly north-south through the eastern portion of the image, appearing as a greenish-turquoise sinuous feature. A small to moderate town is visible near the center of the image with scattered smaller settlements appearing as light-toned clusters across the predominantly rural agricultural landscape.</i>     </div></div>`)[0];
+                popup_f4a184fed3e4b76cf09b3704c660293b.setContent(html_e252bf27d64370c1768e2a96e7a903f0);
+            
+        
+
+        circle_marker_e41ff6714b7c80bf98d55a095e65108b.bindPopup(popup_f4a184fed3e4b76cf09b3704c660293b)
+        ;
+
+        
+    
+    
+            circle_marker_e41ff6714b7c80bf98d55a095e65108b.bindTooltip(
+                `<div>
+                     Sheohar · C1 · Dev 3/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cfc149ac63d106cfae5ea04b96d807db = L.circleMarker(
+                [25.75, 71.39],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1976D2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_cef4643a83432f8ceca2e53430e28f73 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_796bc5fd3f29d718dcbecd7057a84b0c = $(`<div id="html_796bc5fd3f29d718dcbecd7057a84b0c" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #1976D2;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Barmer, Rajasthan</b><br>       <span style='color:#1976D2;font-weight:700;font-size:11px'>         Cluster 1: Moderate Deprivation</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>4/10</b><br>           Vegetation: <b>1/10</b><br>           Roads: <b>3/10</b><br>           Development: <b>3/10</b><br>           Land Use: <b>arid</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The image shows a compact urban core (Barmer town) surrounded by vast arid, barren terrain typical of the Thar Desert region. Vegetation is extremely sparse, limited to a few small dark green patches likely representing irrigated gardens or parks near the town periphery. The landscape is predominantly sandy-brown with rocky outcrops visible to the west, and an airstrip or military installation appears in the upper-right corner. Road arteries radiate outward from the central settlement, but overall infrastructure density is low.</i>     </div></div>`)[0];
+                popup_cef4643a83432f8ceca2e53430e28f73.setContent(html_796bc5fd3f29d718dcbecd7057a84b0c);
+            
+        
+
+        circle_marker_cfc149ac63d106cfae5ea04b96d807db.bindPopup(popup_cef4643a83432f8ceca2e53430e28f73)
+        ;
+
+        
+    
+    
+            circle_marker_cfc149ac63d106cfae5ea04b96d807db.bindTooltip(
+                `<div>
+                     Barmer · C1 · Dev 3/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bde402c995cb44ce372e126ed31443ee = L.circleMarker(
+                [27.57, 80.68],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1976D2", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_c62295feda9e73850aa0d82e18fc00e3 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_d049c2bc5b2b9c3eaae6ef9da2a5deff = $(`<div id="html_d049c2bc5b2b9c3eaae6ef9da2a5deff" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #1976D2;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Sitapur, Uttar Pradesh</b><br>       <span style='color:#1976D2;font-weight:700;font-size:11px'>         Cluster 1: Moderate Deprivation</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>4/10</b><br>           Vegetation: <b>7/10</b><br>           Roads: <b>4/10</b><br>           Development: <b>4/10</b><br>           Land Use: <b>mixed</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>A moderately-sized urban core (Sitapur town) is visible in the center of the image, surrounded by extensive agricultural land with a patchwork of cultivated and fallow fields. The landscape is predominantly green with dense vegetation cover, indicating active agricultural use and scattered tree cover. Some water bodies and green spaces are visible near the urban area, and scattered small settlements dot the rural periphery.</i>     </div></div>`)[0];
+                popup_c62295feda9e73850aa0d82e18fc00e3.setContent(html_d049c2bc5b2b9c3eaae6ef9da2a5deff);
+            
+        
+
+        circle_marker_bde402c995cb44ce372e126ed31443ee.bindPopup(popup_c62295feda9e73850aa0d82e18fc00e3)
+        ;
+
+        
+    
+    
+            circle_marker_bde402c995cb44ce372e126ed31443ee.bindTooltip(
+                `<div>
+                     Sitapur · C1 · Dev 4/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85fe9363f97747fa99970c193f0c59f8 = L.circleMarker(
+                [19.99, 73.79],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26A69A", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_4684cbf38d8bac8e059bbd4a4e409aa4 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_97c720b4d28e3c656f39a6eb63bf287e = $(`<div id="html_97c720b4d28e3c656f39a6eb63bf287e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #26A69A;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Nashik, Maharashtra</b><br>       <span style='color:#26A69A;font-weight:700;font-size:11px'>         Cluster 2: Transitioning</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>7/10</b><br>           Vegetation: <b>3/10</b><br>           Roads: <b>7/10</b><br>           Development: <b>6/10</b><br>           Land Use: <b>urban</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>A large sprawling urban core dominates the central and northern portions of the image, with dense built-up areas appearing as grey-white patches. A river corridor (likely the Godavari) meanders through the city providing a thin green-vegetated riparian strip. The periphery transitions to semi-arid brown terrain with fragmented agricultural plots and scattered peri-urban development, while the surrounding landscape appears dry with limited vegetation cover.</i>     </div></div>`)[0];
+                popup_4684cbf38d8bac8e059bbd4a4e409aa4.setContent(html_97c720b4d28e3c656f39a6eb63bf287e);
+            
+        
+
+        circle_marker_85fe9363f97747fa99970c193f0c59f8.bindPopup(popup_4684cbf38d8bac8e059bbd4a4e409aa4)
+        ;
+
+        
+    
+    
+            circle_marker_85fe9363f97747fa99970c193f0c59f8.bindTooltip(
+                `<div>
+                     Nashik · C2 · Dev 6/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88ed605204d2ba14f844557d3ea1d6ee = L.circleMarker(
+                [23.26, 77.4],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26A69A", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_6f82531ef6f362f4f1c133c6b8e68a55 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_117f412686a4fa8cbcd92ec87f86f322 = $(`<div id="html_117f412686a4fa8cbcd92ec87f86f322" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #26A69A;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Bhopal, Madhya Pradesh</b><br>       <span style='color:#26A69A;font-weight:700;font-size:11px'>         Cluster 2: Transitioning</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>7/10</b><br>           Vegetation: <b>4/10</b><br>           Roads: <b>7/10</b><br>           Development: <b>7/10</b><br>           Land Use: <b>urban</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The Upper Lake (Bada Talab) is the most striking feature, occupying a large portion of the western-central area with its distinctive dark green water body extending deep into the urban fabric. Dense built-up area dominates the central and eastern portions of the image, with clearly visible road networks radiating outward from the core. The periphery shows a transition from dense urban to peri-urban and agricultural land, with patches of green vegetation interspersed, particularly to the northwest and south.</i>     </div></div>`)[0];
+                popup_6f82531ef6f362f4f1c133c6b8e68a55.setContent(html_117f412686a4fa8cbcd92ec87f86f322);
+            
+        
+
+        circle_marker_88ed605204d2ba14f844557d3ea1d6ee.bindPopup(popup_6f82531ef6f362f4f1c133c6b8e68a55)
+        ;
+
+        
+    
+    
+            circle_marker_88ed605204d2ba14f844557d3ea1d6ee.bindTooltip(
+                `<div>
+                     Bhopal · C2 · Dev 7/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d43b83d976cdba9f4f8e9e65a8ee259 = L.circleMarker(
+                [15.83, 78.04],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26A69A", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_c18c0523a021a88db3393875e7667150 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_9a3835131af6caf4316c783ae0c94785 = $(`<div id="html_9a3835131af6caf4316c783ae0c94785" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #26A69A;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Kurnool, Andhra Pradesh</b><br>       <span style='color:#26A69A;font-weight:700;font-size:11px'>         Cluster 2: Transitioning</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>5/10</b><br>           Vegetation: <b>3/10</b><br>           Roads: <b>5/10</b><br>           Development: <b>5/10</b><br>           Land Use: <b>mixed</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>A prominent river (Tungabhadra/Handri) meanders through the centre of the image with a sizeable urban core of Kurnool city developed along both banks. The surrounding landscape is semi-arid with fragmented agricultural parcels showing mixed fallow and cultivated fields, and limited green vegetation. The urban area shows moderate density with a mix of planned and organically grown settlement patterns, while the peripheral areas transition into peri-urban and agricultural land uses.</i>     </div></div>`)[0];
+                popup_c18c0523a021a88db3393875e7667150.setContent(html_9a3835131af6caf4316c783ae0c94785);
+            
+        
+
+        circle_marker_3d43b83d976cdba9f4f8e9e65a8ee259.bindPopup(popup_c18c0523a021a88db3393875e7667150)
+        ;
+
+        
+    
+    
+            circle_marker_3d43b83d976cdba9f4f8e9e65a8ee259.bindTooltip(
+                `<div>
+                     Kurnool · C2 · Dev 5/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_140a7fd340258113110d760300637877 = L.circleMarker(
+                [9.98, 76.29],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#66BB6A", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_8b9fa28746f391a2c9ccfc1d6a31493f = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_f3e595bb6594de12cf2424a326d34908 = $(`<div id="html_f3e595bb6594de12cf2424a326d34908" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #66BB6A;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Ernakulam, Kerala</b><br>       <span style='color:#66BB6A;font-weight:700;font-size:11px'>         Cluster 3: Better Developed</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>7/10</b><br>           Vegetation: <b>4/10</b><br>           Roads: <b>6/10</b><br>           Development: <b>6/10</b><br>           Land Use: <b>urban</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The image shows a densely built-up coastal/backwater urban area characteristic of Ernakulam/Kochi, with prominent waterways (likely Vembanad Lake backwaters and canals) running through the settlement. Dense, tightly packed urban fabric is visible on both sides of the water channels, with some areas showing irregular settlement patterns typical of older Kerala towns. The significant water presence including the large water body on the left (Arabian Sea coast or backwaters) dominates the western portion of the scene.</i>     </div></div>`)[0];
+                popup_8b9fa28746f391a2c9ccfc1d6a31493f.setContent(html_f3e595bb6594de12cf2424a326d34908);
+            
+        
+
+        circle_marker_140a7fd340258113110d760300637877.bindPopup(popup_8b9fa28746f391a2c9ccfc1d6a31493f)
+        ;
+
+        
+    
+    
+            circle_marker_140a7fd340258113110d760300637877.bindTooltip(
+                `<div>
+                     Ernakulam · C3 · Dev 6/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e936c66ad0b86dfcff917712051bac3 = L.circleMarker(
+                [11.0, 76.96],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#66BB6A", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_3a69f98f955478009e8c48cdc1a01228 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_15fc354ca2072e454f9551463f9e4cf3 = $(`<div id="html_15fc354ca2072e454f9551463f9e4cf3" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #66BB6A;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Coimbatore, Tamil Nadu</b><br>       <span style='color:#66BB6A;font-weight:700;font-size:11px'>         Cluster 3: Better Developed</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>7/10</b><br>           Vegetation: <b>4/10</b><br>           Roads: <b>7/10</b><br>           Development: <b>7/10</b><br>           Land Use: <b>urban</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The image shows a dense urban core in the upper-center portion with extensive built-up area spreading outward, characteristic of Coimbatore city. Several dark-green water bodies (tanks/reservoirs) are visible in the central and southern portions, a hallmark of Tamil Nadu's traditional water management. The periphery transitions to exposed reddish-brown lateritic soil interspersed with agricultural patches and scattered settlements, indicating a peri-urban fringe with ongoing urbanization pressure.</i>     </div></div>`)[0];
+                popup_3a69f98f955478009e8c48cdc1a01228.setContent(html_15fc354ca2072e454f9551463f9e4cf3);
+            
+        
+
+        circle_marker_0e936c66ad0b86dfcff917712051bac3.bindPopup(popup_3a69f98f955478009e8c48cdc1a01228)
+        ;
+
+        
+    
+    
+            circle_marker_0e936c66ad0b86dfcff917712051bac3.bindTooltip(
+                `<div>
+                     Coimbatore · C3 · Dev 7/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d73eb8ff98134e68f266fdfe3ee57529 = L.circleMarker(
+                [18.52, 73.86],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#66BB6A", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 2}
+            ).addTo(map_ed78239ca16ea89a602dc88b9777ce7e);
+        
+    
+        var popup_01cb943570880cb6996b0daa384e0850 = L.popup({
+  "maxWidth": 290,
+});
+
+        
+            
+                var html_52bea66c17727c5a1532b2e9b00d7cd3 = $(`<div id="html_52bea66c17727c5a1532b2e9b00d7cd3" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial,sans-serif;width:260px;background:#ffffff;color:#1a1a1a;                 padding:12px;border-radius:6px;border-left:4px solid #66BB6A;                 box-shadow:0 2px 8px rgba(0,0,0,0.2)'>       <b style='font-size:13px'>Pune, Maharashtra</b><br>       <span style='color:#66BB6A;font-weight:700;font-size:11px'>         Cluster 3: Better Developed</span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <span style='font-size:11px;color:#333'>           Urban Density: <b>7/10</b><br>           Vegetation: <b>3/10</b><br>           Roads: <b>7/10</b><br>           Development: <b>7/10</b><br>           Land Use: <b>urban</b>       </span>       <hr style='border-color:#e0e0e0;margin:8px 0'>       <i style='font-size:10px;color:#666'>The image shows a heavily urbanized landscape centered on Pune city, with dense built-up areas dominating the central and southern portions. A river corridor (likely the Mula-Mutha) cuts through the northern part of the image, with exposed brownish-red laterite terrain and rocky outcrops visible on the periphery. An airport or large infrastructure facility is visible in the upper-right quadrant, and the urban fabric transitions from dense irregular settlement patterns in the core to more dispersed peri-urban development at the edges.</i>     </div></div>`)[0];
+                popup_01cb943570880cb6996b0daa384e0850.setContent(html_52bea66c17727c5a1532b2e9b00d7cd3);
+            
+        
+
+        circle_marker_d73eb8ff98134e68f266fdfe3ee57529.bindPopup(popup_01cb943570880cb6996b0daa384e0850)
+        ;
+
+        
+    
+    
+            circle_marker_d73eb8ff98134e68f266fdfe3ee57529.bindTooltip(
+                `<div>
+                     Pune · C3 · Dev 7/10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

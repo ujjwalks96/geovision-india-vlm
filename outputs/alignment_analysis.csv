@@ -1,0 +1,5 @@
+cluster,cluster_label,urban_density,vegetation_cover,agricultural_activity,road_network_density,water_presence,informal_settlement_signs,industrial_infrastructure,green_urban_spaces,land_fragmentation,overall_development_visual,women_literacy_pct,stunting_pct,institutional_births
+0,High Deprivation,2.67,4.67,5.33,3.33,3.0,2.67,1.33,1.33,5.0,2.67,24.1,47.2,62.3
+1,Moderate Deprivation,3.67,4.33,5.0,3.67,2.0,3.0,1.67,2.0,5.0,3.33,38.5,41.5,74.1
+2,Transitioning,6.33,3.33,4.0,6.33,5.33,4.33,4.0,2.33,6.0,6.0,48.2,34.1,84.5
+3,Better Developed,7.0,3.67,2.67,6.67,5.0,4.67,4.67,2.67,6.67,6.67,62.8,24.6,93.2
