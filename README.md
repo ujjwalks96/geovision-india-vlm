@@ -31,7 +31,7 @@
 
 The complete analysis is available as a standalone, self-contained HTML report that requires no internet connection or server to view.
 
-> **[outputs/geovision_india_report.html](outputs/geovision_india_report.html)**
+> **[View Live Report](https://ujjwalks96.github.io/geovision-india-vlm/outputs/geovision_india_report.html)**
 
 This report contains every chart, satellite image, archetype narrative, alignment analysis, and bias assessment from the study. Download it and open it in any browser. It is the primary deliverable of this project and the recommended starting point for anyone reviewing the findings.
 
