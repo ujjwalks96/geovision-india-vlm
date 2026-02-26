@@ -4,8 +4,7 @@
 
 <br>
 
-# GeoVision India
-### Visual Archetype Analysis of Geodemographic Clusters using Vision Language Models
+# GeoVision India: Visual Archetype Analysis of Geodemographic Clusters using Vision Language Models
 
 <br>
 
